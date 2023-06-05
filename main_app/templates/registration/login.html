@@ -8,6 +8,7 @@
 </head>
 <body>
     <p>Log In</p>
+    <p>update</p>
     <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
         {{ form.as_p }}

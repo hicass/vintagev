@@ -9,16 +9,28 @@
 </head>
 <body>
     <nav>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        {% if user.is_authenticated %}
-        <li><a href="">View All Clothes</a></li>
-        <li><a href="{% url 'logout' %}">Log Out</a></li>
-        {% else %}
-        <li><a href="{% url 'signup' %}">Sign Up</a></li>
-        <li><a href="{% url 'login' %}">Log In</a></li>
+        <div class="navbar">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'category' %}">View All Clothes</a></li>
+            <div class="subnav-content">
+                <a href="">All</a>
+                <a href="">Tops</a>
+                <a href="">Bottoms</a>
+                <a href="">Jackets</a>
+                <a href="">Dresses</a>
+                <a href="">Jumpsuits</a>
+                <a href="">Suits</a>
+                <a href="">Accessories</a>
+            </div>
+            <li><a href="">Add Listing</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+            {% else %}
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'login' %}">Log In</a></li>
 
-        {% endif %}
-        
+            {% endif %}
+        </div> 
     </nav>
     {% block content %}
     {% endblock %}

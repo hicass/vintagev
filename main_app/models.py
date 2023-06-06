@@ -53,6 +53,10 @@ class Clothes(models.Model):
   color = models.CharField(max_length=100)
   price= models.IntegerField()
   brand = models.CharField(max_length=100)
-  likes = models.IntegerField()
+  likes = models.IntegerField(
+    default=[0]
+  )
   clothing_name = models.CharField(max_length=100)
   description = models.TextField(max_length=200)
+
+

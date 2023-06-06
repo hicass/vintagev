@@ -1,19 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
-    <section>
+    <section id="home-page-section">
         <div class="home-page-left">
-            <h1>
+            <h1 id="home-h1">
                 Unlock<br>
-                <span class="accent-txt">YOUR</span><br>
+                <span id="home-accent-txt">YOUR</span><br>
                 Style Story
             </h1>
-            <h2>Vintage Vault</h2>
+            <h2 id="home-h2">Vintage Vault</h2>
         </div>
 
         <div class="home-page-right">
-            <img>
+            <img id="home-page-img" src="{% static 'assets/homepageimg.jpg' %}">
             <hr>
         </div>
     </section>

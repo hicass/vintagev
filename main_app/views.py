@@ -22,7 +22,7 @@ class ClothesCreate(CreateView):
   fields = ['clothing_name', 'brand', 'category', 'size', 'condition', 'material', 'color', 'description', 'price']
   def form_valid(self, form):
     form.instance.user = self.request.user
-    return super().form_valid(form)
+    return redirect(request, '/')
 
 
 

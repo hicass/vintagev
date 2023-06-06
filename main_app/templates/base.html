@@ -23,7 +23,7 @@
                 <a href="">Suits</a>
                 <a href="">Accessories</a>
             </div>
-            <li><a href="">Add Listing</a></li>
+            <li><a href="{% url 'clothes_create' %}">Add Listing</a></li>
             <li><a href="{% url 'logout' %}">Log Out</a></li>
             {% else %}
             <li><a href="{% url 'signup' %}">Sign Up</a></li>

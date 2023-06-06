@@ -19,7 +19,7 @@ def clothes_index(request):
 
 class ClothesCreate(CreateView):
   model = Clothes
-  fields = ['Size', 'Condition', 'Material', 'Color', 'Brand', 'clothing_name', 'Description']
+  fields = ['clothing_name', 'brand', 'category', 'size', 'condition', 'material', 'color', 'description', 'price']
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from .models import Clothes
@@ -14,6 +15,18 @@ def clothes_index(request):
     return render(request, 'clothes/index.html', {
         'clothes': clothes
     })
+
+
+class ClothesCreate(CreateView):
+  model = Clothes
+  fields = ['Size', 'Condition', 'Material', 'Color', 'Brand', 'clothing_name', 'Description']
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
+
+
+
+
 
 def signup(request):
     error_message = ''

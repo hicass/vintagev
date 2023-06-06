@@ -2,6 +2,12 @@
 
 {% block content %}
 
-    <h1>You are logged in!</h1>
+    <h1>Category name goes here!</h1>
+
+    {% for clothing in clothes %}
+        <div>
+            <p>{{ clothing.clothing_name }}</p>
+            <p>{{ clothing.description }}</p>
+        </div>
 
 {% endblock %}

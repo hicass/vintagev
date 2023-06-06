@@ -19,15 +19,29 @@
 </head>
 <body>
     <nav>
-        <a href="{% url 'home' %}"><img id="logo" src="{% static 'assets/logo.png' %}" alt="Vintage Vault Logo"></a>
-        <div id="nav-right">
-        {% if user.is_authenticated %}
-            <li class='nav-link'><a href="">View All Clothes</a></li>
+        <div class="navbar">
+            <a href="{% url 'home' %}"><img id="logo" src="{% static 'assets/logo.png' %}" alt="Vintage Vault Logo"></a>
+            <div id="nav-right"></div>
+            {% if user.is_authenticated %}
+            <li class='nav-link'><a href="{% url 'category' %}">View All Clothes</a></li>
+            <div class="subnav-content">
+                <a href="">All</a>
+                <a href="">Tops</a>
+                <a href="">Bottoms</a>
+                <a href="">Jackets</a>
+                <a href="">Dresses</a>
+                <a href="">Jumpsuits</a>
+                <a href="">Suits</a>
+                <a href="">Accessories</a>
+            </div>
+            <li class='nav-link'><a href="{% url 'clothes_create' %}">Add Listing</a></li>
             <li class='nav-link'><a href="{% url 'logout' %}">Log Out</a></li>
-        {% else %}
+            {% else %}
             <li class='nav-link'><a href="{% url 'signup' %}">Sign Up</a></li>
             <li class='nav-link'><a href="{% url 'login' %}">Log In</a></li>
-        {% endif %}
+
+            {% endif %}
+       
     </div>
     </nav>
     {% block content %}

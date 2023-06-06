@@ -5,21 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mainstyle.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Cutive+Mono&family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <title>Vintage Vault</title>
 </head>
 <body>
     <nav>
-        <li><a href="{% url 'home' %}">Home</a></li>
+        <a href="{% url 'home' %}"><img id="logo" src="{% static 'assets/logo.png' %}" alt="Vintage Vault Logo"></a>
+        <div id="nav-right">
         {% if user.is_authenticated %}
-        <li><a href="">View All Clothes</a></li>
-        <li><a href="{% url 'logout' %}">Log Out</a></li>
+            <li class='nav-link'><a href="">View All Clothes</a></li>
+            <li class='nav-link'><a href="{% url 'logout' %}">Log Out</a></li>
         {% else %}
-        <li><a href="{% url 'signup' %}">Sign Up</a></li>
-        <li><a href="{% url 'login' %}">Log In</a></li>
-
+            <li class='nav-link'><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li class='nav-link'><a href="{% url 'login' %}">Log In</a></li>
         {% endif %}
-        
+    </div>
     </nav>
-    {% load static %}
+    {% block content %}
+    {% endblock %}
 </body>
 </html>

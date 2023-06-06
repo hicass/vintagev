@@ -1,56 +1,58 @@
-# from django.db import models
+from django.db import models
+from django.contrib.auth.models import User
 
 
 
-# CATEGORIES = (
-#   ('Top'),
-#   ('Bottom'),
-#   ('Jacket'),
-#   ('Dress'),
-#   ('Jumpsuit'),
-#   ('Shoes'),
-#   ('Accessory')
-# )
 
-# SIZES = (
-#   ('XL', 'Xtra Large'),
-#   ('L', 'Large'),
-#   ('M', 'Medium'),
-#   ('S', 'Small'),
-#   ('XS', 'Xtra Small')
-# )
+CATEGORIES = (
+  ('T', 'Top'),
+  ('Btm', 'Bottom'),
+  ('Jckt', 'Jacket'),
+  ('Drs', 'Dress'),
+  ('Jmp', 'Jumpsuit'),
+  ('Sh', 'Shoes'),
+  ('Acc', 'Accessory')
+)
 
-# CONDITION = (
-#   ('Brand New'),
-#   ('Like New'),
-#   ('USED - Excellent'),
-#   ('USED - Good'),
-#   ('USED - Fair')
-# )
+SIZES = (
+  ('XL', 'Xtra Large'),
+  ('L', 'Large'),
+  ('M', 'Medium'),
+  ('S', 'Small'),
+  ('XS', 'Xtra Small')
+)
+
+CONDITION = (
+  ('Bn', 'Brand New'),
+  ('Ln', 'Like New'),
+  ('UE', 'USED - Excellent'),
+  ('UG', 'USED - Good'),
+  ('UF', 'USED - Fair')
+)
 
 
-# # Create your models here.
-# class Clothes(models.Model):
-#   user = models.ForeignKey(User, on_delete=models.CASCADE)
-#   category = models.CharField(
-#     max_length=1,
-#     choices=CATEGORIES,
-#     default=[0][0]
-#     )
-#   size = models.CharField(
-#     max_length=1,
-#     choices=SIZES,
-#     default=[0][0]
-#     )
-#   condition = models.CharField(
-#     max_length=1,
-#     choices=CONDITION,
-#     default=[0][0]
-#     )
-#   material = models.CharField(max_length=100)
-#   color = models.CharField(max_length=100)
-#   price= models.IntegerField()
-#   brand = models.CharField(max_length=100)
-#   likes = models.IntegerField()
-#   clothing_name = models.CharField(max_length=100)
-#    c = models.TextField(max_length=200)
+# Create your models here.
+class Clothes(models.Model):
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+  category = models.CharField(
+    max_length=20,
+    choices=CATEGORIES,
+    default=[0][0]
+    )
+  size = models.CharField(
+    max_length=20,
+    choices=SIZES,
+    default=[0][0]
+    )
+  condition = models.CharField(
+    max_length=20,
+    choices=CONDITION,
+    default=[0][0]
+    )
+  material = models.CharField(max_length=100)
+  color = models.CharField(max_length=100)
+  price= models.IntegerField()
+  brand = models.CharField(max_length=100)
+  likes = models.IntegerField()
+  clothing_name = models.CharField(max_length=100)
+  description = models.TextField(max_length=200)

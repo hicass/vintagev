@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    background-color: rgb(218, 178, 139);
+    font-family: 'Rubik', sans-serif;
+    color: rgb(32, 40, 90);
+}
+
+nav {
+    overflow: hidden;
+    display: flex;
+    gap: 2vw;
+}
+
+#nav-right {
+    display: flex;
+    margin-left: 78%;
+}
+
+#logo {
+    width: 5vw;
+}
+
+.nav-link {
+    width: 8vw;
+    padding: 5%;
+    list-style-type: none;
+    font-size: 1.5vw;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(32, 40, 90);
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+#home-page-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+#home-page-img {
+    width: 45vw;
+    padding: 5vw 7vw;
+    filter: drop-shadow(1vw 1vw rgb(23, 29, 66))
+}
+
+#home-h1 {
+    color: rgb(32, 40, 90);
+    font-size: 4vw;
+}
+
+#home-h2 {
+    padding: 18vh 0 0;
+    font-family: 'Cutive Mono', monospace;
+    font-size: 3vw;
+    color: rgb(32, 40, 90);
+}
+
+.home-page-left {
+    padding: 5vw 0 0 7vw;
+}
+
+#home-accent-txt {
+    font-family: 'Bungee Shade', cursive;
+    font-size: 6vw;
+}
+
+hr {
+    height: 3px;
+    border-width: 0;
+    background-color: rgb(32, 40, 90);
+}

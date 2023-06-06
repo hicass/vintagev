@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from .models import Clothes
 
 
 def home(request):
@@ -8,7 +9,11 @@ def home(request):
 
 
 def clothes_index(request):
-    return render(request, 'clothes/index.html')
+    clothes = Clothes.objects.all()
+
+    return render(request, 'clothes/index.html', {
+        'clothes': clothes
+    })
 
 def signup(request):
     error_message = ''

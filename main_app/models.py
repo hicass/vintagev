@@ -51,7 +51,7 @@ class Clothes(models.Model):
     )
   material = models.CharField(max_length=100)
   color = models.CharField(max_length=100)
-  price= models.IntegerField()
+  price = models.IntegerField()
   brand = models.CharField(max_length=100)
   likes = models.IntegerField()
   clothing_name = models.CharField(max_length=100)

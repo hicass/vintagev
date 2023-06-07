@@ -62,10 +62,10 @@ class Clothes(models.Model):
 
 
   def __str__(self):
-    return f'{self.name} ({self.id})'
+    return f'{self.clothing_name} ({self.id})'
 
   def get_absolute_url(self):
-    return reverse('detail', kwargs={'clothes_id': self.id})
+    return reverse('detail', kwargs={'clothing_id': self.id})
   
   
 class Cart(models.Model):

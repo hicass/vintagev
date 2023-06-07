@@ -35,7 +35,7 @@ class ClothesCreate(LoginRequiredMixin, CreateView):
   fields = ['clothing_name', 'brand', 'category', 'size', 'condition', 'material', 'color', 'description', 'price']
   def form_valid(self, form):
     form.instance.user = self.request.user
-    return super().form_valid(form)
+    return redirect(request, '/')
 
 
 class ClothesUpdate(LoginRequiredMixin, UpdateView):
@@ -71,7 +71,7 @@ def signup(request):
 
 
 @login_required
-def add_photo(request, clothing_id):
+def add_photo(request, clothes_id):
     photo_file = request.FILES.get('photo-file', None)
     if photo_file:
         s3 = boto3.client('s3')
@@ -80,11 +80,11 @@ def add_photo(request, clothing_id):
             bucket = os.environ['S3_BUCKET']
             s3.upload_fileobj(photo_file, bucket, key)
             url = f"{os.environ['S3_BASE_URL']}{bucket}/{key}"
-            Photo.objects.create(url=url, clothing_id=clothing_id)
+            Photo.objects.create(url=url, clothes_id=clothes_id)
         except Exception as e:
             print('An error occurred uploading file to S3')
             print(e)
-    return redirect('detail', clothing_id=clothing_id)
+    return redirect('detail', clothes_id=clothes_id)
 
 
 

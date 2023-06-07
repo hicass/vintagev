@@ -89,10 +89,58 @@ def add_photo(request, clothes_id):
 
 
 def clothes_detail(request, clothes_id):
-    clothing = Clothes.objects.get(id=clothes_id)
+    clothes = Clothes.objects.get(id=clothes_id)
 
     return render(request, 'clothes/detail.html', {
-        'clothing': clothing
+        'clothes': clothes
     })
 
 
+
+def tops_index(request):
+    clothing = Clothes.objects.filter(category='T')
+    return render(request, 'clothes/index.html', {
+        'clothing': clothing
+    })
+
+def bottoms_index(request):
+    clothing = Clothes.objects.filter(category='Btm')
+    return render(request, 'clothes/index.html', {
+        'clothing': clothing
+    })
+
+def jackets_index(request):
+    clothing = Clothes.objects.filter(category='Jckt')
+    return render(request, 'clothes/index.html', {
+        'clothing': clothing
+    })
+
+def dresses_index(request):
+    clothing = Clothes.objects.filter(category='Drs')
+    return render(request, 'clothes/index.html', {
+        'clothing': clothing
+    })
+
+def jumpsuits_index(request):
+    clothing = Clothes.objects.filter(category='Jmp')
+    return render(request, 'clothes/index.html', {
+        'clothing': clothing
+    })
+
+def shoes_index(request):
+    clothing = Clothes.objects.filter(category='Sh')
+    return render(request, 'clothes/index.html', {
+        'clothing': clothing
+    })
+
+def shoes_index(request):
+    clothing = Clothes.objects.filter(category='Sh')
+    return render(request, 'clothes/index.html', {
+        'clothing': clothing
+    })
+
+def accessories_index(request):
+    clothing = Clothes.objects.filter(category='Acc')
+    return render(request, 'clothes/index.html', {
+        'clothing': clothing
+    })

@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Clothes, Photo
 import uuid
 import boto3
@@ -12,34 +14,36 @@ import os
 def home(request):
     return render(request, 'home.html')
 
-
+@login_required
 def bag(request):
   return render(request, 'bag.html')
 
+@login_required
 def likes(request):
   return render(request, 'likes.html')
 
-
+@login_required
 def clothes_index(request):
-    clothing = Clothes.objects.all()
-
+    clothing = Clothes.objects.filter(user=request.user)
     return render(request, 'clothes/index.html', {
         'clothing': clothing
     })
 
 
-class ClothesCreate(CreateView):
+class ClothesCreate(LoginRequiredMixin, CreateView):
   model = Clothes
   fields = ['clothing_name', 'brand', 'category', 'size', 'condition', 'material', 'color', 'description', 'price']
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
-  
-class ClothesUpdate(UpdateView):
+
+@login_required
+class ClothesUpdate(LoginRequiredMixin, UpdateView):
   model = Clothes
   fields = ['category', 'size', 'condition', 'material', 'color', 'price', 'brand', 'clothing_name', 'description']
 
-class ClothesDelete(DeleteView):
+@login_required
+class ClothesDelete(LoginRequiredMixin, DeleteView):
   model = Clothes
 #   success_url '/clothes'
 
@@ -66,7 +70,7 @@ def signup(request):
 
 
 
-
+@login_required
 def add_photo(request, clothing_id):
     photo_file = request.FILES.get('photo-file', None)
     if photo_file:
@@ -80,4 +84,15 @@ def add_photo(request, clothing_id):
         except Exception as e:
             print('An error occurred uploading file to S3')
             print(e)
-    return redirect('add_photo.html', clothing_id=clothing_id)
+
+    return redirect('detail', clothing_id=clothing_id)
+
+
+
+def clothes_detail(request, clothing_id):
+    clothing = Clothes.objects.get(id=clothing_id)
+
+    return render(request, 'clothes/detail.html', {
+        'clothing': clothing
+    })
+

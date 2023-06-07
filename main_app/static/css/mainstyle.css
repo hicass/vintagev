@@ -8,23 +8,46 @@ body {
 nav {
     overflow: hidden;
     display: flex;
-    gap: 2vw;
-}
-
-#nav-right {
-    display: flex;
-    margin-left: 78%;
+    flex-direction: column;
+    gap: 1vw;
 }
 
 #logo {
     width: 5vw;
 }
 
-.nav-link {
-    width: 8vw;
-    padding: 5%;
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5vw;
+}
+
+.top-nav-link {
+    width: 4vw;
+    padding: 3%;
+    list-style-type: none;
+    font-size: 2vw;
+}
+
+.bottom-nav-link  {
+    width: 4vw;
+    padding: 0 3%;
     list-style-type: none;
     font-size: 1.5vw;
+    font-family: 'Cutive Mono', monospace;;
+}
+
+#nav-right {
+    display: flex;
+    flex-direction: row;
+}
+
+.bottom-nav {
+    margin: 0 3%;
+    display: flex;
+    align-items: center;
+    border: 2px rgb(32, 40, 90);
+    border-style: solid none;
 }
 
 a {

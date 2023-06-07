@@ -9,7 +9,7 @@
         <div class="grid-container">
         {% for clothes in clothing %}
             <div class="grid-item">
-                <a href="{% url 'detail' clothing.id %}">
+                <a href="{% url 'detail' clothes.id %}">
                     <div class="item-link">
                         <p>Image goes here...</p>
                         <p class="item-name">{{ clothes.clothing_name }}</p>

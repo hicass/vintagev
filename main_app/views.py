@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.shortcuts import render, redirect
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from .models import Clothes
@@ -9,11 +9,18 @@ def home(request):
     return render(request, 'home.html')
 
 
+def bag(request):
+  return render(request, 'bag.html')
+
+def likes(request):
+  return render(request, 'likes.html')
+
+
 def clothes_index(request):
-    clothes = Clothes.objects.all()
+    clothing = Clothes.objects.all()
 
     return render(request, 'clothes/index.html', {
-        'clothes': clothes
+        'clothing': clothing
     })
 
 
@@ -23,10 +30,14 @@ class ClothesCreate(CreateView):
   def form_valid(self, form):
     form.instance.user = self.request.user
     return redirect(request, '/')
+  
+class ClothesUpdate(UpdateView):
+  model = Clothes
+  fields = ['category', 'size', 'condition', 'material', 'color', 'price', 'brand', 'clothing_name', 'description']
 
-
-
-
+class ClothesDelete(DeleteView):
+  model = Clothes
+#   success_url '/clothes'
 
 def signup(request):
     error_message = ''

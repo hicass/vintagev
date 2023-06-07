@@ -31,10 +31,12 @@
                 <a href="">Jackets</a>
                 <a href="">Dresses</a>
                 <a href="">Jumpsuits</a>
-                <a href="">belt</a>
+                <a href="">Jackets</a>
                 <a href="">Accessories</a>
             </div>
             <li class='nav-link'><a href="{% url 'clothes_create' %}">Add Listing</a></li>
+            <li class='nav-link'><a href="{% url 'likes' %}">Likes</a></li>
+            <li class='nav-link'><a href="{% url 'bag' %}">Bag</a></li>
             <li class='nav-link'><a href="{% url 'logout' %}">Log Out</a></li>
             {% else %}
             <li class='nav-link'><a href="{% url 'signup' %}">Sign Up</a></li>

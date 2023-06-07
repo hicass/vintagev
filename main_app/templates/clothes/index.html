@@ -2,13 +2,26 @@
 
 {% block content %}
 
-    <h1>Category name goes here!</h1>
+    <h1>All</h1>
 
-    {% for clothing in clothes %}
-        <div>
-            <p>{{ clothing.clothing_name }}</p>
-            <p>{{ clothing.description }}</p>
+    <section id="category-section">
+
+        <div class="grid-container">
+        {% for clothing in clothes %}
+            <div class="grid-item">
+                <a>
+                    <div class="item-link">
+                        <p>Image goes here...</p>
+                        <p class="item-name">{{ clothing.clothing_name }}</p>
+                        <p class="item-description">{{ clothing.description }}</p>
+                    </div>
+                </a>
+                    <p class="clothing-price">${{ clothing.price }}</p>
+                    <p class="clothing-size">{{ clothing.size }}</p>
+                </div>
+        {% endfor %}
         </div>
-    {% endfor %}
+
+    </section>
 
 {% endblock %}

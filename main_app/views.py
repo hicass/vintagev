@@ -35,7 +35,7 @@ class ClothesCreate(LoginRequiredMixin, CreateView):
   fields = ['clothing_name', 'brand', 'category', 'size', 'condition', 'material', 'color', 'description', 'price']
   def form_valid(self, form):
     form.instance.user = self.request.user
-    return redirect(request, '/')
+    return super().form_valid(form)
 
 @login_required
 class ClothesUpdate(LoginRequiredMixin, UpdateView):
@@ -84,6 +84,7 @@ def add_photo(request, clothing_id):
         except Exception as e:
             print('An error occurred uploading file to S3')
             print(e)
+
     return redirect('detail', clothing_id=clothing_id)
 
 
@@ -94,5 +95,4 @@ def clothes_detail(request, clothing_id):
     return render(request, 'clothes/detail.html', {
         'clothing': clothing
     })
-
 

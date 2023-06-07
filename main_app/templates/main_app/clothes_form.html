@@ -10,5 +10,12 @@
         </table>
         <input type="submit" value="add!">
     </form>
+    {% for photo in clothing.photo_set.all %}
+    <img class="responsive-img card-panel" src="{{photo.url}}" alt="Clothing Photo">
+{% empty %}
+    <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+{% endfor %}
+
+
 
 {% endblock %}

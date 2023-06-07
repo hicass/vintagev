@@ -33,7 +33,7 @@ class ClothesCreate(CreateView):
   fields = ['clothing_name', 'brand', 'category', 'size', 'condition', 'material', 'color', 'description', 'price']
   def form_valid(self, form):
     form.instance.user = self.request.user
-    return redirect(request, '/')
+    return super().form_valid(form)
   
 class ClothesUpdate(UpdateView):
   model = Clothes
@@ -80,4 +80,4 @@ def add_photo(request, clothing_id):
         except Exception as e:
             print('An error occurred uploading file to S3')
             print(e)
-    return redirect('detail', clothing_id=clothing_id)
+    return redirect('add_photo.html', clothing_id=clothing_id)

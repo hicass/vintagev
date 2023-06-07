@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section>
+        <h1>{{ clothing.user }}</h1>
+        <h2>{{ clothing.clothing_name }}</h2>
+        <p>{{ clothing.description }}</p>
+        <p>{{ clothing.price }}</p>
+        <table>
+            <tr>
+                <td>Size</td>
+                <td></td>
+                <td>{{ clothing.size }}</td>
+            </tr>
+            <tr>
+                <td>Brand</td>
+                <td></td>
+                <td>{{ clothing.brand }}</td>
+            </tr>
+            <tr>
+                <td>Condition</td>
+                <td></td>
+                <td>{{ clothing.condition }}</td>
+            </tr>
+            <tr>
+                <td>Meterial</td>
+                <td></td>
+                <td>{{ clothing.material }}</td>
+            </tr>
+            <tr>
+                <td>Color</td>
+                <td></td>
+                <td>{{ clothing.color }}</td>
+            </tr>
+        </table>
+    </section>
+
+{% endblock %}

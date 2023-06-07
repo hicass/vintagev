@@ -59,14 +59,20 @@ a:hover {
     cursor: pointer;
 }
 
-#home-page-section {
+#home-page-main {
     display: flex;
     justify-content: space-between;
 }
 
-#home-page-img {
-    width: 45vw;
+#top-home-page-img {
+    width: 40vw;
     padding: 5vw 7vw;
+    filter: drop-shadow(1vw 1vw rgb(23, 29, 66))
+}
+
+.home-page-img {
+    width: 35vw;
+    padding: 2vw 7vw;
     filter: drop-shadow(1vw 1vw rgb(23, 29, 66))
 }
 
@@ -97,35 +103,29 @@ hr {
     background-color: rgb(32, 40, 90);
 }
 
-/*       clothes-index.css       */
-
-.grid-container {
-    display: grid;
-    padding: 2% 3%;
-    gap: 2%;
-    grid-template-columns: 22vw 22vw 22vw 22vw;
-    grid-template-rows: 50vh;
+.about-area {
+    margin-bottom: 3%;
+    display: flex;
 }
 
-.item-link {
-    height: 22vw;
-    width: 100%;
-    margin: 0;
+#about-title {
+    font-size: 3vw;
+}
+
+#about-paragraph-top {
+    font-size: 1.8vw;
+    padding: 0 7vw 0 0;
+}
+
+#about-paragraph-bottom {
+    font-size: 1.8vw;
+    padding: 0 0 0 7vw;
+}
+
+footer {
     background-color: rgb(32, 40, 90);
     color: rgb(218, 178, 139);
-}
-
-.clothing-price {
-    margin: 2vh 0 1vh;
-    font-size: 2vw;
-    font-weight: bolder;
-}
-
-.clothing-size {
-    margin: 0;
-    font-size: 1.5vw;
-}
-
-.item-name {
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 1.3vw;
 }

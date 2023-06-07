@@ -22,7 +22,7 @@ def bag(request):
 def likes(request):
   return render(request, 'likes.html')
 
-@login_required
+
 def clothes_index(request):
     clothing = Clothes.objects.all()
     return render(request, 'clothes/index.html', {

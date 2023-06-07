@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    <section id="home-page-section">
+    <section id="home-page-main">
         <div class="home-page-left">
             <h1 id="home-h1">
                 Unlock<br>
@@ -14,9 +14,66 @@
         </div>
 
         <div class="home-page-right">
-            <img id="home-page-img" src="{% static 'assets/homepageimg.jpg' %}">
+            <img id="top-home-page-img" src="{% static 'assets/homepageimg.jpg' %}">
             <hr>
         </div>
     </section>
 
+    <section id="home-page-about">
+        <div class="about-area">
+            <div id="about-imgs">
+                <img class="home-page-img" src="{% static 'assets/homepageimg4.jpg' %}">
+                <img class="home-page-img" src="{% static 'assets/homepageimg2.jpg' %}">
+            </div>
+        <div id="about-paragraph-top">
+                <h3 id="about-title">About us!</h3>
+                <p>
+                    Welcome to Vintage Vault, the premier online marketplace for second-hand and vintage 
+                    clothing enthusiasts. We provide a dynamic platform where users can buy and sell unique 
+                    and timeless fashion pieces from the comfort of their own homes. With our passionate 
+                    community of fashion lovers, Vintage Vault has become the go-to destination for those 
+                    seeking sustainable and one-of-a-kind fashion options.
+                </p>
+                <p>
+                    At Vintage Vault, we believe in the power of recycling and reimagining fashion. We understand 
+                    that every garment has a story to tell, and by offering a platform for users to give their 
+                    clothing a second life, we contribute to reducing waste and supporting a more eco-conscious 
+                    lifestyle. Our mission is to promote sustainability while simultaneously celebrating the beauty 
+                    and individuality found in vintage and second-hand clothing.
+                </p>
+                <p>
+                    We foster a vibrant community of fashion-forward individuals who share a passion for sustainability 
+                    and self-expression. Our platform encourages interaction and connection, allowing users to not only 
+                    buy and sell clothing but also to engage in discussions, share style tips, and build relationships 
+                    with like-minded individuals. We believe in the power of community, and Vintage Vault provides a 
+                    supportive environment for fashion enthusiasts to connect and inspire one another.
+                </p>
+            </div>
+        </div>
+        <div class="about-area">
+            <div id="about-paragraph-bottom">
+                <p>
+                    Selling on Vintage Vault is a seamless and hassle-free experience. Our user-friendly interface and intuitive 
+                    features make listing and managing your items effortless. With our robust seller tools, you can easily showcase 
+                    your clothing, communicate with buyers, and track your sales. Whether you're a seasoned seller or new to the 
+                    world of online fashion marketplaces, Vintage Vault provides the resources and support you need to succeed.
+                </p>
+                <p>
+                    Join our growing community of fashion-forward individuals and experience the joy of finding unique and sustainable 
+                    fashion treasures. Whether you're a buyer looking for that perfect vintage gem or a seller seeking a platform to 
+                    share your clothing with others, Vintage Vault is here to meet your needs and exceed your expectations. Embrace the 
+                    beauty of second-hand fashion and unlock the possibilities that Vintage Vault has to offer.
+                </p>
+                <p>Together, let's redefine the fashion industry, one stylish and sustainable step at a time. Welcome to Vintage Vault!</p>
+            </div>
+            <div id="about-imgs">
+                <img class="home-page-img" src="{% static 'assets/homepageimg3.jpg' %}">
+                <img class="home-page-img" src="{% static 'assets/homepageimg5.jpg' %}">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>All Rights Reserved, &copy; 2023 Vintage Vault &nbsp;</div>
+    </footer>
 {% endblock %}

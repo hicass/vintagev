@@ -35,7 +35,7 @@ class ClothesCreate(LoginRequiredMixin, CreateView):
   fields = ['clothing_name', 'brand', 'category', 'size', 'condition', 'material', 'color', 'description', 'price']
   def form_valid(self, form):
     form.instance.user = self.request.user
-    return redirect(request, '/')
+    return super().form_valid(form)
 
 
 class ClothesUpdate(LoginRequiredMixin, UpdateView):

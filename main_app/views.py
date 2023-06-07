@@ -35,7 +35,7 @@ class ClothesCreate(LoginRequiredMixin, CreateView):
   fields = ['clothing_name', 'brand', 'category', 'size', 'condition', 'material', 'color', 'description', 'price']
   def form_valid(self, form):
     form.instance.user = self.request.user
-    return redirect(request, '/')
+    return super().form_valid(form)
 
 
 class ClothesUpdate(LoginRequiredMixin, UpdateView):
@@ -80,7 +80,7 @@ def add_photo(request, clothes_id):
             bucket = os.environ['S3_BUCKET']
             s3.upload_fileobj(photo_file, bucket, key)
             url = f"{os.environ['S3_BASE_URL']}{bucket}/{key}"
-            Photo.objects.create(url=url, clothes_id=clothes_id)
+            Photo.objects.create(url=url, clothing_id=clothes_id)
         except Exception as e:
             print('An error occurred uploading file to S3')
             print(e)

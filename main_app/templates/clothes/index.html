@@ -11,7 +11,11 @@
             <div class="grid-item">
                 <a href="{% url 'detail' clothes.id %}">
                     <div class="item-link">
-                        <p>Image goes here...</p>
+                        {% for photo in clothes.photo_set.all %}
+                        <img src="{{photo.url}}" alt="Clothing Photo">
+                    {% empty %}
+                        <div>No Photos Uploaded</div>
+                    {% endfor %}
                         <p class="item-name">{{ clothes.clothing_name }}</p>
                         <p class="item-description">{{ clothes.description }}</p>
                     </div>

@@ -85,3 +85,14 @@ def add_photo(request, clothing_id):
             print('An error occurred uploading file to S3')
             print(e)
     return redirect('detail', clothing_id=clothing_id)
+
+
+
+def clothes_detail(request, clothing_id):
+    clothing = Clothes.objects.get(id=clothing_id)
+
+    return render(request, 'clothes/detail.html', {
+        'clothing': clothing
+    })
+
+

@@ -1,0 +1,30 @@
+.grid-container {
+    display: grid;
+    padding: 2% 3%;
+    gap: 2%;
+    grid-template-columns: 22vw 22vw 22vw 22vw;
+    grid-template-rows: 50vh;
+}
+
+.item-link {
+    height: 22vw;
+    width: 100%;
+    margin: 0;
+    background-color: rgb(32, 40, 90);
+    color: rgb(218, 178, 139);
+}
+
+.clothing-price {
+    margin: 2vh 0 1vh;
+    font-size: 2vw;
+    font-weight: bolder;
+}
+
+.clothing-size {
+    margin: 0;
+    font-size: 1.5vw;
+}
+
+.item-name {
+    margin: 0;
+}

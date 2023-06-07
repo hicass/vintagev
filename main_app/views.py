@@ -37,12 +37,12 @@ class ClothesCreate(LoginRequiredMixin, CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-@login_required
+
 class ClothesUpdate(LoginRequiredMixin, UpdateView):
   model = Clothes
   fields = ['category', 'size', 'condition', 'material', 'color', 'price', 'brand', 'clothing_name', 'description']
 
-@login_required
+
 class ClothesDelete(LoginRequiredMixin, DeleteView):
   model = Clothes
 #   success_url '/clothes'

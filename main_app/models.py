@@ -65,11 +65,9 @@ class Clothes(models.Model):
     return f'{self.name} ({self.id})'
 
   def get_absolute_url(self):
-    return reverse('detail', kwargs={'clothing_id': self.id})
+    return reverse('detail', kwargs={'clothes_id': self.id})
   
   
-  
-
 class Cart(models.Model):
    user = models.ForeignKey(User, on_delete=models.CASCADE)
    clothing = models.ForeignKey(Clothes, on_delete=models.CASCADE)
@@ -77,7 +75,8 @@ class Cart(models.Model):
   
 class Photo(models.Model):
     url = models.CharField(max_length=200)
-    clothes = models.ForeignKey(Clothes, on_delete=models.CASCADE)
+    clothing = models.ForeignKey(Clothes, on_delete=models.CASCADE)
 
     def __str__(self):
-       return f"Photo for clothing_id: {self.clothing_id} @{self.url}"
+       return f"Photo for clothes_id: {self.clothing_id} @{self.url}"
+    

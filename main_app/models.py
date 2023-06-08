@@ -16,6 +16,7 @@ CATEGORIES = (
 )
 
 SIZES = (
+  ('N/A', 'Not Applicable'),
   ('XL', 'Xtra Large'),
   ('L', 'Large'),
   ('M', 'Medium'),

@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import environ
 from pathlib import Path
 import os
 from dotenv import load_dotenv
@@ -82,9 +83,9 @@ DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql',
     'NAME': 'vintagev',
-    'USER': os.getenv('DB_USER'),
-    'PASSWORD': os.getenv('DB_PW'),
-    'HOST': os.getenv('DATABASE_URL'),
+    'USER': os.environ['DB_USER'],
+    'PASSWORD': os.environ['DB_PW'],
+    'HOST': os.environ['HOST'],
     'PORT': '5432',
   }
 }

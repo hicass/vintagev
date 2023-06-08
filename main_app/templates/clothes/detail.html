@@ -33,7 +33,11 @@
                 <td></td>
                 <td>{{ clothes.color }}</td>
             </tr>
+                
         </table>
+
+
+
         {% for photo in clothes.photo_set.all %}
         <img src="{{photo.url}}" alt="Clothing Photo" width="160" height="160">
 {% empty %}
@@ -47,6 +51,14 @@
     <br><br>
     <button type="submit" class="btn">Upload Photo</button>
 </form>
+
+<div class="card-action">
+    <a href="{% url 'clothing_update' clothes.id %}">Edit</a>
+    <a href="{% url 'clothing_delete' clothes.id %}">Delete</a>
+</div>
+
     </section>
+
+
 
 {% endblock %}

@@ -26,20 +26,19 @@
             <a href="{% url 'home' %}"><img id="logo" src="{% static 'assets/logo.png' %}" alt="Vintage Vault Logo"></a>
             <div id="nav-right">
                 {% if user.is_authenticated %}
-                    <li class='top-nav-link'><a href="{% url 'clothing_create' %}"><i class="fa fa-plus-square" aria-hidden="true"></i></a></li>
-                    <li class='top-nav-link'><a href="{% url 'likes' %}"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
-                    <li class='top-nav-link'><a href="{% url 'bag' %}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                    <li class='top-nav-link'><a href=""><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                    <li class='top-nav-link'><a href="{% url 'logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                    <li class='top-nav-link'><a class='top-nav-link' href="{% url 'clothing_create' %}"><i class="fa fa-plus-square" aria-hidden="true"></i></a></li>
+                    <li class='top-nav-link'><a class='top-nav-link' href="{% url 'likes' %}"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                    <li class='top-nav-link'><a class='top-nav-link' href="{% url 'bag' %}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                    <li class='top-nav-link'><a class='top-nav-link' href=""><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                    <li class='top-nav-link'><a class='top-nav-link' href="{% url 'logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
                 {% else %}
-                    <li class='nav-link'><a href="{% url 'signup' %}">Sign Up</a></li>
-                    <li class='nav-link'><a href="{% url 'login' %}">Log In</a></li>
+                    <li class='top-nav-link'><a class='top-nav-link' href="{% url 'signup' %}"><i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
+                    <li class='top-nav-link'><a class='top-nav-link'href="{% url 'login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
                 {% endif %}
             </div>
         </div>
 
         <div class="bottom-nav">
-            <hr>
             <a class='bottom-nav-link' href="{% url 'index' %}">All</a>
             <a class='bottom-nav-link' href="{% url 'tops_index' %}">Tops</a>
             <a class='bottom-nav-link' href="{% url 'bottoms_index' %}">Bottoms</a>
@@ -48,7 +47,6 @@
             <a class='bottom-nav-link' href="{% url 'jumpsuits_index' %}">Jumpsuits</a>
             <a class='bottom-nav-link' href="{% url 'shoes_index' %}">Shoes</a>
             <a class='bottom-nav-link' href="{% url 'accessories_index' %}">Accessories</a>
-            <hr>
         </div>
 
     </nav>

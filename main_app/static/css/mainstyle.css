@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: rgb(218, 178, 139);
+    background-color: rgb(219, 194, 169);
     font-family: 'Rubik', sans-serif;
     color: rgb(32, 40, 90);
 }
@@ -9,7 +9,6 @@ nav {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 1vw;
 }
 
 #logo {
@@ -17,6 +16,7 @@ nav {
 }
 
 .top-nav {
+    margin: .5% .5%;
     display: flex;
     justify-content: space-between;
     font-size: 1.5vw;
@@ -24,13 +24,14 @@ nav {
 
 .top-nav-link {
     width: 4vw;
-    padding: 3%;
+    margin: 5% 0 0;
     list-style-type: none;
     font-size: 2vw;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .bottom-nav-link  {
-    width: 4vw;
     padding: 0 3%;
     list-style-type: none;
     font-size: 1.5vw;
@@ -40,6 +41,7 @@ nav {
 #nav-right {
     display: flex;
     flex-direction: row;
+    gap: 3vw;
 }
 
 .bottom-nav {
@@ -57,6 +59,7 @@ a {
 
 a:hover {
     cursor: pointer;
+    color: rgb(54, 61, 105);
 }
 
 #home-page-main {
@@ -76,20 +79,39 @@ a:hover {
     filter: drop-shadow(1vw 1vw rgb(23, 29, 66))
 }
 
+#welcome-container {
+    display: grid;
+    padding-left: center;
+    width: 33vw;
+}
+
 #home-h1 {
+    margin: 0;
+    letter-spacing: 2vw;
+    overflow: hidden;
+    border-right: 5px solid rgb(32, 40, 90);
+    font-family: 'Cutive Mono', monospace;
+    font-size: 4vw;
+    white-space: nowrap;
+    animation: 
+        typing 1.5s steps(20, end) forwards,
+        blink-caret .85s step-end infinite;
+}
+
+#home-h2 {
     color: rgb(32, 40, 90);
     font-size: 4vw;
 }
 
-#home-h2 {
-    padding: 18vh 0 0;
+#home-h3 {
+    padding: 15vh 0 0;
     font-family: 'Cutive Mono', monospace;
     font-size: 3vw;
     color: rgb(32, 40, 90);
 }
 
 .home-page-left {
-    padding: 5vw 0 0 7vw;
+    padding: 3vw 0 0 7vw;
 }
 
 #home-accent-txt {
@@ -99,8 +121,9 @@ a:hover {
 
 hr {
     height: 3px;
-    border-width: 0;
+    border: 0;
     background-color: rgb(32, 40, 90);
+    animation: thread 6s infinite;
 }
 
 .about-area {
@@ -128,4 +151,22 @@ footer {
     display: flex;
     justify-content: center;
     font-size: 1.3vw;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    50% { width: 50% }
+    100% { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(32, 40, 90) }
+}
+
+@keyframes thread {
+    0% { width: 100% }
+    50% { width: 100% }
+    80% { width: 0px }
+    100% { width: 100% }
 }

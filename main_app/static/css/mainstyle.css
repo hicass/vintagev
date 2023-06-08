@@ -153,6 +153,33 @@ footer {
     font-size: 1.3vw;
 }
 
+.btn {
+    margin: 1vw 0 2vw;
+    display: inline-block;
+    background-color: rgb(50, 56, 96);
+    color: rgb(235, 218, 202);
+    font-size: 2vw;
+    font-family: 'Cutive Mono', monospace;
+    border: .3vw solid rgb(23, 29, 66);
+    box-shadow: .5vw .5vw 0 rgb(23, 29, 66);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgb(235, 218, 202);
+    color: rgb(23, 29, 66);
+    border: .3vw solid rgb(50, 56, 96);
+    box-shadow: .5vw .5vw 0 rgb(50, 56, 96);
+}
+
+.btn:active {
+    background-color: rgb(255, 199, 146);
+    color: rgb(42, 48, 89);
+    box-shadow: none;
+    transform: translateY(.3vw)
+}
+
 @keyframes typing {
     from { width: 0 }
     50% { width: 50% }

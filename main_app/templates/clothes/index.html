@@ -12,7 +12,7 @@
                 <a href="{% url 'detail' clothes.id %}">
                     <div class="item-link">
                         {% for photo in clothes.photo_set.all %}
-                        <img src="{{photo.url}}" alt="Clothing Photo">
+                        <img src="{{photo.url}}" alt="Clothing Photo" width="160" height="160">
                     {% empty %}
                         <div>No Photos Uploaded</div>
                     {% endfor %}

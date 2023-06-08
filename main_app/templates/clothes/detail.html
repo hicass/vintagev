@@ -35,9 +35,9 @@
             </tr>
         </table>
         {% for photo in clothes.photo_set.all %}
-    <img class="responsive-img card-panel" src="{{photo.url}}" alt="Clothing Photo">
+        <img src="{{photo.url}}" alt="Clothing Photo" width="160" height="160">
 {% empty %}
-    <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+    <div>No Photos Uploaded</div>
 {% endfor %}
 
 <!-- new code below -->

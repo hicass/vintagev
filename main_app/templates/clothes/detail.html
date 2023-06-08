@@ -2,66 +2,71 @@
 
 {% block content %}
 
-    <section>
-        <h1>{{ clothes.user }}</h1>
-        <h2>{{ clothes.clothing_name }}</h2>
-        <p>{{ clothes.description }}</p>
-        <p>{{ clothes.price }}</p>
-        <table>
-            <tr>
-                <td>Size</td>
-                <td></td>
-                <td>{{ clothes.size }}</td>
-            </tr>
-            <tr>
-                <td>Brand</td>
-                <td></td>
-                <td>{{ clothes.brand }}</td>
-            </tr>
-            <tr>
-                <td>Condition</td>
-                <td></td>
-                <td>{{ clothes.condition }}</td>
-            </tr>
-            <tr>
-                <td>Meterial</td>
-                <td></td>
-                <td>{{ clothes.material }}</td>
-            </tr>
-            <tr>
-                <td>Color</td>
-                <td></td>
-                <td>{{ clothes.color }}</td>
-            </tr>
-                
-        </table>
-
-
-
-        {% for photo in clothes.photo_set.all %}
-        <img src="{{photo.url}}" alt="Clothing Photo" width="160" height="160">
-{% empty %}
-    <div>No Photos Uploaded</div>
-{% endfor %}
-
-{% if user.is_authenticated %}
-    {% if user == clothes.user %}
-
-<!-- new code below -->
-<form action="{% url 'add_photo' clothes.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
-    {% csrf_token %}
-    <input type="file" name="photo-file">
-    <br><br>
-    <button type="submit" class="btn">Upload Photo</button>
-</form>
-
-        <div class="card-action">
-            <a href="{% url 'clothing_update' clothes.id %}">Edit</a>
-            <a href="{% url 'clothing_delete' clothes.id %}">Delete</a>
+    <section id="detail-section">
+        <div class="detail-img-div">
+            {% for photo in clothes.photo_set.all %}
+                <img class="detail-img" src="{{photo.url}}" alt="Clothing Photo" width="160" height="160">
+                {% empty %}
+                <div>No Photos Uploaded...</div>
+                {% endfor %}
+                {% if user.is_authenticated %}
+                    {% if user == clothes.user %}
+                        <form action="{% url 'add_photo' clothes.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+                            {% csrf_token %}
+                                <input type="file" name="photo-file">
+                                <br><br>
+                                <button type="submit" class="btn">Upload Photo</button>
+                        </form>
+        
+                        <div class="card-action">
+                            <a href="{% url 'clothing_update' clothes.id %}">Edit</a>
+                            <a href="{% url 'clothing_delete' clothes.id %}">Delete</a>
+                        </div>
+                    {% endif %}
+                {% endif %}
         </div>
 
-    {% endif %}
-{% endif %}
+        <div class="detail-info-div">
+            <h1 id="detail-h1">@{{ clothes.user }}</h1>
+            <h2 id="detail-clothing-name">{{ clothes.clothing_name }}</h2>
+            <p id="detail-description">{{ clothes.description }}</p>
+            <p id="detail-price">${{ clothes.price }}</p>
+
+            {% if user.is_authenticated %}
+                <button class="btn" id="detail-btn">add to cart!</button>
+                {% else %}
+                <a href="{% url 'login' %}"><button class="btn" id="detail-btn">log in!</button></a>
+            {% endif %}
+
+            <table class="details-table">
+                <tr>
+                    <hr class="thread">
+                    <td class="td-name">Size:</td>
+                    <td class="table-spacer"></td>
+                    <td class="td-info">{{ clothes.size }}</td>
+                </tr>
+                <tr>
+                    <td class="td-name">Brand:</td>
+                    <td></td>
+                    <td class="td-info">{{ clothes.brand }}</td>
+                </tr>
+                <tr>
+                    <td class="td-name">Condition:</td>
+                    <td></td>
+                    <td class="td-info">{{ clothes.condition }}</td>
+                </tr>
+                <tr>
+                    <td class="td-name">Meterial:</td>
+                    <td></td>
+                    <td class="td-info">{{ clothes.material }}</td>
+                </tr>
+                <tr>
+                    <td class="td-name">Color:</td>
+                    <td></td>
+                    <td class="td-info">{{ clothes.color }}</td>
+                </tr>
+            </table>
+        </div>
 
     </section>
 

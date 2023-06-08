@@ -1,0 +1,68 @@
+#detail-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 5% 0 0;
+}
+
+.detail-img-div {
+    margin: 0 5% 0 0;
+    width: 35vw;
+}
+
+.detail-img {
+    height: 35vw;
+    width: 100%;
+    filter: drop-shadow(1vw 1vw rgb(23, 29, 66))
+}
+
+.detail-info-div {
+    width: 30vw;
+}
+
+#detail-h1 {
+    margin: 0;
+    font-family: 'Cutive Mono', monospace;
+    font-weight: bolder;
+    font-size: 4vw;
+}
+
+#detail-clothing-name {
+    font-size: 2vw;
+}
+
+#detail-description {
+    font-size: 1.5vw;
+}
+
+#detail-price {
+    font-weight: bolder;
+    font-size: 2vw;
+}
+
+#detail-btn {
+    width: 100%;
+}
+
+.details-table {
+    width: 100%;
+}
+
+.details-table > tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-spacer {
+    width: 50%;
+}
+
+.td-name {
+    font-family: 'Cutive Mono', monospace;
+    font-size: 1.5vw;
+    font-weight: bolder;
+}
+
+.td-info {
+    font-size: 1.2vw;
+}

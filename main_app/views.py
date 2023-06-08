@@ -45,7 +45,7 @@ class ClothesUpdate(LoginRequiredMixin, UpdateView):
 
 class ClothesDelete(LoginRequiredMixin, DeleteView):
   model = Clothes
-#   success_url '/clothes'
+  success_url = '/clothing'
 
 def signup(request):
     error_message = ''

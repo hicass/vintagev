@@ -36,7 +36,8 @@
                 
         </table>
 
-
+{% if user.is_authenticated %}
+    {% if user == clothes.user %}
 
         {% for photo in clothes.photo_set.all %}
         <img src="{{photo.url}}" alt="Clothing Photo" width="160" height="160">
@@ -52,13 +53,16 @@
     <button type="submit" class="btn">Upload Photo</button>
 </form>
 
-<div class="card-action">
-    <a href="{% url 'clothing_update' clothes.id %}">Edit</a>
-    <a href="{% url 'clothing_delete' clothes.id %}">Delete</a>
-</div>
+        <div class="card-action">
+            <a href="{% url 'clothing_update' clothes.id %}">Edit</a>
+            <a href="{% url 'clothing_delete' clothes.id %}">Delete</a>
+        </div>
+
+    {% endif %}
+{% endif %}
 
     </section>
 
 
-
 {% endblock %}
+

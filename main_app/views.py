@@ -32,7 +32,7 @@ def clothes_index(request):
 
 class ClothesCreate(LoginRequiredMixin, CreateView):
   model = Clothes
-  fields = ['clothing_name', 'brand', 'category', 'size', 'condition', 'material', 'color', 'description', 'price']
+  fields = ['clothing_name', 'brand', 'category', 'size', 'condition', 'material', 'color', 'description', 'price',]
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
@@ -56,7 +56,7 @@ def signup(request):
             user = form.save()
             login(request, user)
 
-            return redirect('clothing/index')
+            return redirect('index')
 
         else:
             error_message = 'Invalid sign up - try again.'

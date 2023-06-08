@@ -6,15 +6,8 @@
 }
 
 #add-h1 {
-    margin: 2vw 0 2vw;
+    margin: 1vw 0 2vw;
     font-size: 4vw;
-    font-family: 'Cutive Mono', monospace;
-}
-
-.btn {
-    background-color: rgb(23, 29, 66);
-    color: rgb(219, 194, 169);
-    font-size: 2vw;
     font-family: 'Cutive Mono', monospace;
 }
 
@@ -22,4 +15,6 @@ form {
     display: flex;
     flex-direction: column;
     font-size: 2vw;
+    color: rgb(23, 29, 66);
+    gap: 2vw;
 }

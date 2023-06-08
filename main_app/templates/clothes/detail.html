@@ -36,14 +36,16 @@
                 
         </table>
 
-{% if user.is_authenticated %}
-    {% if user == clothes.user %}
+
 
         {% for photo in clothes.photo_set.all %}
         <img src="{{photo.url}}" alt="Clothing Photo" width="160" height="160">
 {% empty %}
     <div>No Photos Uploaded</div>
 {% endfor %}
+
+{% if user.is_authenticated %}
+    {% if user == clothes.user %}
 
 <!-- new code below -->
 <form action="{% url 'add_photo' clothes.id %}" enctype="multipart/form-data" method="POST" class="card-panel">

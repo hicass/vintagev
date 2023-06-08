@@ -32,7 +32,7 @@ def clothes_index(request):
 
 class ClothesCreate(LoginRequiredMixin, CreateView):
   model = Clothes
-  fields = ['clothing_name', 'brand', 'category', 'size', 'condition', 'material', 'color', 'description', 'price']
+  fields = ['clothing_name', 'brand', 'category', 'size', 'condition', 'material', 'color', 'description', 'price', 'date']
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)

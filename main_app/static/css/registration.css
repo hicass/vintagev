@@ -1,11 +1,11 @@
-#signup-section {
+#signup-section, #login-section {
     display: flex;
-    justify-content: left;
-    align-items: flex-start;
-    margin: 5% 0 0;
+    flex-direction: column;
+    align-items: center;
+    margin: 2% 0 0;
 }
 
-#signup-h1 {
+.registration-txt {
     margin: 0;
     letter-spacing: 2vw;
     overflow: hidden;
@@ -18,3 +18,13 @@
         blink-caret .85s step-end infinite;
 }
 
+.registration-form-div {
+    width: 70%;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    font-size: 2vw;
+    color: rgb(23, 29, 66);
+}

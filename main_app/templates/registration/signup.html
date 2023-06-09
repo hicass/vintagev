@@ -1,19 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<br>
-<h1 id="signup-h1">Sign Up</h1>
+  <section id="signup-section">
+    <div>
+      <h1 class="registration-txt">Sign Up</h1>
+    </div>
 
-<section id="signup-section">
-<p class="red-text">{{ error_message }}</p>
+    <p class="red-text">{{ error_message }}</p>
 
-<div >
-  <form method="POST" action="{% url 'signup' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input class="btn" type="submit" value="Sign Up">
-  </form>
-</section>
-</div>
+    <div class="registration-form-div">
+      <form class="registration-form" method="POST" action="{% url 'signup' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn" type="submit" value="Sign Up">
+      </form>
+    </div>
+  </section>
 
 {% endblock %}

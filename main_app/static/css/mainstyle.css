@@ -35,7 +35,7 @@ nav {
     padding: 0 3%;
     list-style-type: none;
     font-size: 1.5vw;
-    font-family: 'Cutive Mono', monospace;;
+    font-family: 'Cutive Mono', monospace;
 }
 
 #nav-right {
@@ -178,6 +178,12 @@ footer {
     color: rgb(42, 48, 89);
     box-shadow: none;
     transform: translateY(.3vw)
+}
+
+#index-h1 {
+    margin: 2vw 5% 0;
+    font-size: 3vw;
+    font-family: 'Cutive Mono', monospace;
 }
 
 @keyframes typing {

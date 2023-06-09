@@ -4,19 +4,21 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.template import Context
 from .models import Clothes, Photo
 import uuid
 import boto3
 import os
 
 
-
 def home(request):
     return render(request, 'home.html')
+
 
 @login_required
 def bag(request):
   return render(request, 'bag.html')
+
 
 @login_required
 def likes(request):
@@ -25,17 +27,92 @@ def likes(request):
 
 def clothes_index(request):
     clothing = Clothes.objects.all().order_by('-id')
+
     return render(request, 'clothes/index.html', {
-        'clothing': clothing
+        'clothing': clothing,
+        'category': 'All'
+    })
+
+
+def tops_index(request):
+    clothing = Clothes.objects.filter(category='T').order_by('-id')
+
+    return render(request, 'clothes/index.html', {
+        'clothing': clothing,
+        'category': 'Tops!'
+    })
+
+
+def bottoms_index(request):
+    clothing = Clothes.objects.filter(category='Btm').order_by('-id')
+
+    return render(request, 'clothes/index.html', {
+        'clothing': clothing,
+        'category': 'Bottoms!'
+    })
+
+
+def jackets_index(request):
+    clothing = Clothes.objects.filter(category='Jckt').order_by('-id')
+
+    return render(request, 'clothes/index.html', {
+        'clothing': clothing,
+        'category': 'Jackets'
+    })
+
+
+def dresses_index(request):
+    clothing = Clothes.objects.filter(category='Drs').order_by('-id')
+
+    return render(request, 'clothes/index.html', {
+        'clothing': clothing,
+        'category': 'Dresses!'
+    })
+
+
+def jumpsuits_index(request):
+    clothing = Clothes.objects.filter(category='Jmp').order_by('-id')
+
+    return render(request, 'clothes/index.html', {
+        'clothing': clothing,
+        'category': 'Jumpsuits!'
+    })
+
+
+def shoes_index(request):
+    clothing = Clothes.objects.filter(category='Sh').order_by('-id')
+
+    return render(request, 'clothes/index.html', {
+        'clothing': clothing,
+        'category': 'Shoes'
+    })
+
+
+def accessories_index(request):
+    clothing = Clothes.objects.filter(category='Acc').order_by('-id')
+
+    return render(request, 'clothes/index.html', {
+        'clothing': clothing,
+        'category': 'Accessories!'
+    })
+
+
+def clothes_detail(request, clothes_id):
+    clothes = Clothes.objects.get(id=clothes_id)
+
+    return render(request, 'clothes/detail.html', {
+        'clothes': clothes
     })
 
 
 class ClothesCreate(LoginRequiredMixin, CreateView):
-  model = Clothes
-  fields = ['clothing_name', 'brand', 'category', 'size', 'condition', 'material', 'color', 'description', 'price',]
-  def form_valid(self, form):
-    form.instance.user = self.request.user
-    return super().form_valid(form)
+    model = Clothes
+    fields = ['clothing_name', 'brand', 'category', 'size', 'condition', 'material', 'color', 'description', 'price',]
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+
+        return super().form_valid(form)
 
 
 class ClothesUpdate(LoginRequiredMixin, UpdateView):
@@ -46,6 +123,7 @@ class ClothesUpdate(LoginRequiredMixin, UpdateView):
 class ClothesDelete(LoginRequiredMixin, DeleteView):
   model = Clothes
   success_url = '/clothing'
+
 
 def signup(request):
     error_message = ''
@@ -67,9 +145,6 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 
-
-
-
 @login_required
 def add_photo(request, clothes_id):
     photo_file = request.FILES.get('photo-file', None)
@@ -85,62 +160,3 @@ def add_photo(request, clothes_id):
             print('An error occurred uploading file to S3')
             print(e)
     return redirect('detail', clothes_id=clothes_id)
-
-
-
-def clothes_detail(request, clothes_id):
-    clothes = Clothes.objects.get(id=clothes_id)
-
-    return render(request, 'clothes/detail.html', {
-        'clothes': clothes
-    })
-
-
-
-def tops_index(request):
-    clothing = Clothes.objects.filter(category='T')
-    return render(request, 'clothes/index.html', {
-        'clothing': clothing
-    })
-
-def bottoms_index(request):
-    clothing = Clothes.objects.filter(category='Btm')
-    return render(request, 'clothes/index.html', {
-        'clothing': clothing
-    })
-
-def jackets_index(request):
-    clothing = Clothes.objects.filter(category='Jckt')
-    return render(request, 'clothes/index.html', {
-        'clothing': clothing
-    })
-
-def dresses_index(request):
-    clothing = Clothes.objects.filter(category='Drs')
-    return render(request, 'clothes/index.html', {
-        'clothing': clothing
-    })
-
-def jumpsuits_index(request):
-    clothing = Clothes.objects.filter(category='Jmp')
-    return render(request, 'clothes/index.html', {
-        'clothing': clothing
-    })
-
-def shoes_index(request):
-    clothing = Clothes.objects.filter(category='Sh')
-    return render(request, 'clothes/index.html', {
-        'clothing': clothing
-    })
-
-def shoes_index(request):
-    clothing = Clothes.objects.filter(category='Sh')
-    return render(request, 'clothes/index.html', {
-        'clothing': clothing
-    })
-
-def accessories_index(request):
-    clothing = Clothes.objects.filter(category='Acc')
-    return render(request, 'clothes/index.html', {
-        'clothing': clothing
-    })

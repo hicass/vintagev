@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <h1>All</h1>
+    <h1 id="index-h1">{{ category }}</h1>
 
     <section id="category-section">
 
@@ -12,7 +12,9 @@
                 <a href="{% url 'detail' clothes.id %}">
                     <div class="item-link">
                         {% for photo in clothes.photo_set.all %}
+                            {% if forloop.first %}
                         <img class="item-photo" src="{{photo.url}}" alt="Clothing Photo" width="160" height="160">
+                            {% endif %}
                     {% empty %}
                         <p>No Photos Uploaded</p>
                         <p class="item-name">{{ clothes.clothing_name }}</p>

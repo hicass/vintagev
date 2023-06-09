@@ -3,7 +3,6 @@
     padding: 2% 3%;
     gap: 2%;
     grid-template-columns: 22vw 22vw 22vw 22vw;
-    grid-template-rows: 50vh;
 }
 
 .item-link {
@@ -11,18 +10,31 @@
     width: 100%;
     margin: 0;
     background-color: rgb(32, 40, 90);
+    filter: drop-shadow(1vw 1vw rgb(23, 29, 66));
     color: rgb(218, 178, 139);
+    overflow: hidden;
+}
+
+.item-link img {
+    transition: scale 400ms;
+}
+
+.item-link:hover img {
+    scale: 110%;
+}
+
+.grid-item {
+    margin-bottom: 8%;
 }
 
 .item-photo {
     height: 22vw;
     width: 100%;
     margin: 0;
-    filter: drop-shadow(1vw 1vw rgb(23, 29, 66))
 }
 
 .clothing-price {
-    margin: 2vh 0 1vh;
+    margin: 2vw 0 1vw;
     font-size: 2vw;
     font-weight: bolder;
 }

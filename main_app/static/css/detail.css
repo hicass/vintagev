@@ -5,6 +5,10 @@
     margin: 5% 0 0;
 }
 
+.detail-img-container {
+    margin-bottom: 10%;
+}
+
 .detail-img-div {
     margin: 0 5% 0 0;
     width: 35vw;
@@ -14,6 +18,13 @@
     height: 35vw;
     width: 100%;
     filter: drop-shadow(1vw 1vw rgb(23, 29, 66))
+}
+
+.edit-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8%;
 }
 
 .detail-info-div {

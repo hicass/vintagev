@@ -1,109 +1,209 @@
 .lamp {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 30vw;
-    min-height: 300px;
-    width: 12vw;
-    min-width: calc(300px * 3 / 7);
-    background: rgb(23, 29, 66);
-    clip-path: polygon(33% 0, 0 70%, 22% 88%, 0 100%, 100% 100%, 78% 88%, 100% 70%, 67% 0);
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 30vw;
+  min-height: 300px;
+  width: 12vw;
+  min-width: calc(300px * 3 / 7);
+  background: rgb(23, 29, 66);
+  clip-path: polygon(33% 0, 0 70%, 22% 88%, 0 100%, 100% 100%, 78% 88%, 100% 70%, 67% 0);
 }
   
 .glass {
-    background: rgb(183, 211, 229);
-    width: 100%;
-    height: 60%;
-    position: absolute;
-    bottom: 30%;
-    overflow: hidden;
+  background: rgb(183, 211, 229);
+  width: 100%;
+  height: 60%;
+  position: absolute;
+  bottom: 30%;
+  overflow: hidden;
 }
 
 .lava {
-    filter: url("#goo");
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
+  filter: url("#goo");
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .blob {
-    border-radius: 50%;
-    background: rgb(238, 175, 103);
-    position: absolute;
+  border-radius: 50%;
+  background: rgb(238, 175, 103);
+  position: absolute;
 }
 
 .blob.top {
-    width: 100%;
-    height: 4%;
-    top: -3.7%;
-    left: 0;
+  width: 100%;
+  height: 4%;
+  top: -3.7%;
+  left: 0;
 }
 
 .blob.bottom {
-    width: 100%;
-    height: 4%;
-    bottom: -3%;
-    left: 0;
+  width: 100%;
+  height: 4%;
+  bottom: -3%;
+  left: 0;
 }
 
 .blob:nth-child(1) {
-    width: calc(15% * 1.4);
-    height: 15%;
-    left: 45%;
-    bottom: -15%;
-    animation: blob-one_2 ease-in-out 7s infinite;
+  width: calc(15% * 1.4);
+  height: 15%;
+  left: 45%;
+  bottom: -15%;
+  animation: blob-one_2 ease-in-out 7s infinite;
 }
 
 .blob:nth-child(2) {
-    width: calc(22% * 1.4);
-    height: 22%;
-    right: 14%;
-    bottom: -15%;
-    animation: blob-two_2 ease-in-out 11s infinite;
+  width: calc(22% * 1.4);
+  height: 22%;
+  right: 14%;
+  bottom: -15%;
+  animation: blob-two_2 ease-in-out 11s infinite;
 }
 
 .blob:nth-child(3) {
-    width: calc(32% * 1.4);
-    height: 32%;
-    bottom: -15%;
-    left: 14%;
-    animation: blob-three_2 ease-in-out 16s infinite;
+  width: calc(32% * 1.4);
+  height: 32%;
+  bottom: -15%;
+  left: 14%;
+  animation: blob-three_2 ease-in-out 16s infinite;
 }
 
 #construction-container {
-    width: 58vw;
-    margin-left: 20%;
-    display: grid;
-    padding-left: center;
+  width: 58vw;
+  margin-left: 20%;
+  display: grid;
+  padding-left: center;
 }
 
 .construction-txt {
-    letter-spacing: 1vw;
-    overflow: hidden;
-    border-right: 5px solid rgb(32, 40, 90);
-    font-family: 'Cutive Mono', monospace;
-    font-size: 3vw;
-    white-space: nowrap;
-    animation: 
-        typing 2.8s steps(40, end) forwards,
-        blink-caret .85s step-end infinite;
+  letter-spacing: 1vw;
+  overflow: hidden;
+  border-right: 5px solid rgb(32, 40, 90);
+  font-family: 'Cutive Mono', monospace;
+  font-size: 3vw;
+  white-space: nowrap;
+  animation: 
+      typing 2.8s steps(40, end) forwards,
+      blink-caret .85s step-end infinite;
 }
 
 #loading-thread {
-    position: absolute;
-    bottom: 5%;
+  position: absolute;
+  bottom: 5%;
 }
   
-@keyframes blob-one_2 {
-    0%, 100% {
-      transform: translatey(0);
-    }
+
+.record-container {
+  margin: 5% 0 0 40%;
+  width: 20vw;
+  height: 20vw;
+  background-color: rgb(50, 56, 96);
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0.5vw 0.5vw 0 0 rgb(23, 29, 66);
+}
+
+.plate {
+  width: fit-content;
+}
+
+.plate .black,
+.plate .white,
+.plate .center,
+.plate .border {
+  border-radius: 100%;
+}
+
+.record-container,
+.plate .black,
+.plate .white,
+.plate .border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plate .black {
+  width: 15vw;
+  height: 15vw;
+  background-color: rgb(238, 175, 103);
+  animation: rotation 2s infinite linear;
+}
+
+.plate .white {
+  width: 70px;
+  height: 70px;
+  background-color: rgb(183, 211, 229);
+}
+
+.plate .center {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(238, 175, 103);
+}
+
+.plate .border {
+  width: 150px;
+  height: 150px;
+  border-top: 3px solid rgb(183, 211, 229);
+  border-bottom: 3px solid rgb(183, 211, 229);
+  border-left: 3px solid rgb(238, 175, 103);
+  border-right: 3px solid rgb(238, 175, 103);
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: fit-content;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  rotate: -45deg;
+}
+
+.player .circ {
+  width: 35px;
+  height: 35px;
+  background-color: rgb(183, 211, 229);
+  border-radius: 100%;
+  z-index: 1;
+}
+
+.player .rect {
+  width: 14px;
+  height: 120px;
+  background-color: rgb(183, 211, 229);
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 5px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
   
-    50% {
-      transform: translatey(-700%);
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes blob-one_2 {
+  0%, 100% {
+    transform: translatey(0);
+  }
+  
+  50% {
+    transform: translatey(-700%);
     }
 }
   
@@ -126,102 +226,3 @@
       transform: translatey(-305%);
     }
 }
-
-.record-container {
-    margin: 5% 0 0 40%;
-    width: 20vw;
-    height: 20vw;
-    background-color: rgb(50, 56, 96);
-    border-radius: 10px;
-    position: relative;
-    box-shadow: 0.5vw 0.5vw 0 0 rgb(23, 29, 66);
-  }
-  
-  .plate {
-    width: fit-content;
-  }
-  
-  .plate .black,
-  .plate .white,
-  .plate .center,
-  .plate .border {
-    border-radius: 100%;
-  }
-  
-  .record-container,
-  .plate .black,
-  .plate .white,
-  .plate .border {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .plate .black {
-    width: 15vw;
-    height: 15vw;
-    background-color: rgb(238, 175, 103);
-    animation: rotation 2s infinite linear;
-  }
-  
-  @keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-  
-    to {
-      transform: rotate(359deg);
-    }
-  }
-  
-  .plate .white {
-    width: 70px;
-    height: 70px;
-    background-color: rgb(183, 211, 229);
-  }
-  
-  .plate .center {
-    width: 20px;
-    height: 20px;
-    background-color: rgb(238, 175, 103);
-  }
-  
-  .plate .border {
-    width: 150px;
-    height: 150px;
-    border-top: 3px solid rgb(183, 211, 229);
-    border-bottom: 3px solid rgb(183, 211, 229);
-    border-left: 3px solid rgb(238, 175, 103);
-    border-right: 3px solid rgb(238, 175, 103);
-  }
-  
-  .player {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: fit-content;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-bottom: 8px;
-    margin-right: 8px;
-    rotate: -45deg;
-  }
-  
-  .player .circ {
-    width: 35px;
-    height: 35px;
-    background-color: rgb(183, 211, 229);
-    border-radius: 100%;
-    z-index: 1;
-  }
-  
-  .player .rect {
-    width: 14px;
-    height: 120px;
-    background-color: rgb(183, 211, 229);
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 5px;
-  }

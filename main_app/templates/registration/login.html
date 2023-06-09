@@ -3,16 +3,19 @@
 {% block content %}
 
 
-<section id="login-section">
+    <section id="login-section">
+        <div>
+            <h1 class="registration-txt">Welcome back!</h1>
+        </div>
 
-    <h1>Welcome back!</h1>
-    <form method="POST" action="{% url 'login' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="hidden" name="next" value="{{ next }}">
-        <button type="submit" class="btn" id="login-btn">Log In</button>
-    </form>
-
-</section>
+        <div class="registration-form-div">
+            <form class="registration-form" method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="hidden" name="next" value="{{ next }}">
+                <button type="submit" class="btn" id="login-btn">Log In</button>
+            </form>
+        </div>
+    </section>
 
 {% endblock %}

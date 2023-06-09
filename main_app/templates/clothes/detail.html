@@ -6,7 +6,9 @@
 
         <div class="detail-img-div">
             {% for photo in clothes.photo_set.all %}
+            <div class="detail-img-container">
                 <img class="detail-img" src="{{photo.url}}" alt="Clothing Photo" width="160" height="160">
+            </div>
                 {% empty %}
                 <div>No Photos Uploaded...</div>
                 {% endfor %}
@@ -19,9 +21,9 @@
                                 <button type="submit" class="btn">Upload Photo</button>
                         </form>
 
-                        <div class="card-action">
-                            <a href="{% url 'clothing_update' clothes.id %}">Edit</a>
-                            <a href="{% url 'clothing_delete' clothes.id %}">Delete</a>
+                        <div class="edit-container">
+                            <a class="btn" href="{% url 'clothing_update' clothes.id %}">Edit</a>
+                            <a class="btn" href="{% url 'clothing_delete' clothes.id %}">Delete</a>
                         </div>
                     {% endif %}
                 {% endif %}

@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Sign Up</h1>
+<br>
+<h1 id="signup-h1">Sign Up</h1>
 
+<section id="signup-section">
 <p class="red-text">{{ error_message }}</p>
 
 <div >
@@ -11,6 +13,7 @@
     {{ form.as_p }}
     <input class="btn" type="submit" value="Sign Up">
   </form>
+</section>
 </div>
 
 {% endblock %}

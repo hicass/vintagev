@@ -24,7 +24,7 @@ def likes(request):
 
 
 def clothes_index(request):
-    clothing = Clothes.objects.all()
+    clothing = Clothes.objects.all().order_by('-id')
     return render(request, 'clothes/index.html', {
         'clothing': clothing
     })

@@ -1,18 +1,46 @@
+
 # Vintage Vault
-We are a premiere online marketplace for second hand and vintage clothing enthusiasts! Our goal is to become the go-to destination for those seeking sustainable, one of a kind, fashion. Our mission is to promote sustainability and simultaneously celebrating beauty and individuality found in vintage second-hand items. 
 
-## Main Tech Used
-Django, Python, HTML, CSS
+We are a premiere online marketplace for second hand and vintage clothing enthusiasts! Our goal is to become the go-to destination for those seeking sustainable, one of a kind, fashion. Our mission is to promote sustainability and simultaneously celebrating beauty and individuality found in vintage second-hand items.
 
-## Photos of Project
-https://github.com/Ongcangco/funkoHQ/assets/129900118/33783c76-933b-4924-8e19-2fa173df4620
-https://github.com/Ongcangco/funkoHQ/assets/129900118/9b22b3fb-0174-43a8-ba01-3e14d93aeddd
-https://github.com/Ongcangco/funkoHQ/assets/129900118/f87f7f9d-167a-4627-bcf7-5eda62412629
-https://github.com/Ongcangco/funkoHQ/assets/129900118/d454db60-8e53-42cf-930e-92e3c31bf9ad
-##Getting Started
-https://vintagevault.herokuapp.com/
-https://github.com/Ongcangco/funkoHQ/assets/129900118/0df1f019-ce8c-47e2-8584-88f702678cf7
+Our app is designed to connect buyers and sellers, providing a seamless online marketplace for sustainable fashion. With a focus on user-centered design, we have created an intuitive and visually appealing interface that allows users to easily add, delete, or edit their own listings. Leveraging the power of Python, Django, and a PostgreSQL database, Vintage Vault ensures efficient data management and secure access control.
+
+## Authors
+
+- [Trish Ongcangco](https://github.com/Ongcangco)
+- [Samuel Robles](https://github.com/mr-duk25)
+- [Cass Walters](https://github.com/hicass)
 
 
-## IceBox Features
-I think for the future, we would like to add on a good amount of features. The search functionality would be a massive feature we would like deploy, our vision is for users to be able to use keywords to look up items, like any other shopping page.We would also like to have our 'likes' and 'shopping bag' page up and fully running for individual users. We would even like to have user profile pages, as well as have a more interractive interface and implement some fun api.  
+## Tech Stack
+
+- Python
+- Django
+- PostgreSQL
+- HTML
+- CSS
+- Materialize
+
+
+## Screenshots
+
+#### Home Page:
+![Home Page](https://media.giphy.com/media/CtyzI9UMsQghaT1Ez1/giphy.gif)
+
+#### Listing Details Page:
+![Listing Details Page](https://media.giphy.com/media/drDiMSTnbomJoJQ60E/giphy.gif)
+
+#### All Top Listings Page:
+![All Top Listings Page](https://media.giphy.com/media/NqZvnuQcu4LRcFakhy/giphy.gif)
+
+#### Liked Listings Page:
+![Home Page](https://media.giphy.com/media/p0RQjoLcKFSQ8sFcRD/giphy.gif)
+- A page to let users know we are working on the functionality for seeing all of their "liked" listings.
+## Ice Box Features
+
+- Functionality for users to search for posts using keywords.
+- Functionality for users to like/ save listings to purchase later.
+- Functionality for users to add items to their shopping cart, and check out. Which then marks those listings as sold.
+- User profile pages.
+
+ 

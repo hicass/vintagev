@@ -21,6 +21,12 @@ Our app is designed to connect buyers and sellers, providing a seamless online m
 - CSS
 - Materialize
 
+## Get Started!
+![Click this link!](https://vintagevault.herokuapp.com/) to navigate to the site.
+
+To log in and explore please use the following credentials:
+- User: tester
+- Pass: 12345678
 
 ## Screenshots
 
